@@ -1,0 +1,76 @@
+# DREAMT Analysis Configuration
+# =============================
+
+# Data settings
+data:
+  # Path to the DREAMT dataset (relative to project root)
+  data_dir: "data/dreamt"
+  
+  # Resolution to use: "64Hz" or "100Hz"
+  resolution: "64Hz"
+  
+  # Epoch duration for sleep staging (seconds)
+  epoch_duration: 30.0
+
+# Signal processing settings
+preprocessing:
+  # PPG bandpass filter settings (Hz)
+  ppg_lowcut: 0.5
+  ppg_highcut: 4.0
+  
+  # IMU high-pass cutoff for gravity removal (Hz)
+  imu_gravity_cutoff: 0.5
+  
+  # Normalization method: "zscore", "minmax", or "robust"
+  normalization: "zscore"
+
+# Visualization settings
+visualization:
+  # Default figure size (width, height)
+  figsize: [14, 6]
+  
+  # DPI for saved figures
+  dpi: 150
+  
+  # Default time unit for plots: "seconds", "minutes", "hours"
+  time_unit: "hours"
+
+# Sleep stage colors (hex codes)
+stage_colors:
+  W: "#E74C3C"   # Wake - Red
+  N1: "#F39C12"  # NREM1 - Orange
+  N2: "#3498DB"  # NREM2 - Blue
+  N3: "#2C3E50"  # NREM3 - Dark blue
+  R: "#9B59B6"   # REM - Purple
+  P: "#95A5A6"   # Prep - Gray
+  Missing: "#BDC3C7"
+
+# Feature extraction settings
+features:
+  # Window size for feature extraction (seconds)
+  window_size: 30.0
+  
+  # Overlap between windows (0.0 to 1.0)
+  overlap: 0.5
+  
+  # IMU features to extract
+  imu_features:
+    - mean
+    - std
+    - min
+    - max
+    - range
+    - iqr
+    - skewness
+    - kurtosis
+    - energy
+    - zero_crossings
+  
+  # PPG features to extract
+  ppg_features:
+    - mean_hr
+    - std_hr
+    - rmssd  # Heart rate variability
+    - sdnn
+    - pnn50
+
