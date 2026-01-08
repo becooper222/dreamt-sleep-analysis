@@ -89,10 +89,9 @@ dmypy.json
 Thumbs.db
 
 # Data files - don't commit the dataset
-data/dreamt/
-data/*.csv
-data/*.pkl
-data/*.npy
+data/**/*.csv
+data/**/*.pkl
+data/**/*.npy
 *.h5
 *.hdf5
 

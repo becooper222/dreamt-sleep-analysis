@@ -122,12 +122,12 @@ metrics = model.evaluate(X_test, y_test)
 
 ### Hardware Components
 
-| Component | Model | Purpose |
-|-----------|-------|---------|
-| MCU | ESP32-S3-Zero | Processing + BLE |
-| IMU | MPU6050 | Motion sensing |
-| PPG | MAX30102 | Heart rate |
-| Battery | LiPo 500mAh | Power |
+| Component | Model         | Purpose          |
+| --------- | ------------- | ---------------- |
+| MCU       | ESP32-S3-Zero | Processing + BLE |
+| IMU       | MPU6050       | Motion sensing   |
+| PPG       | MAX30102      | Heart rate       |
+| Battery   | LiPo 500mAh   | Power            |
 
 ### System Architecture
 
@@ -157,24 +157,14 @@ metrics = model.evaluate(X_test, y_test)
 └──────────────────────────────────────────────────────────┘
 ```
 
-## 📈 Performance
+## Device Specifications
 
-### Model Accuracy
-
-| Model | Accuracy | Macro F1 | Cohen's κ |
-|-------|----------|----------|-----------|
-| XGBoost | ~75% | ~0.65 | ~0.60 |
-| LightGBM | ~75% | ~0.65 | ~0.60 |
-| Random Forest | ~72% | ~0.60 | ~0.55 |
-
-### Device Specifications
-
-| Metric | Value |
-|--------|-------|
+| Metric        | Value                 |
+| ------------- | --------------------- |
 | Sampling Rate | IMU: 32Hz, PPG: 100Hz |
-| Battery Life | ~10 hours active |
-| BLE Range | ~10 meters |
-| Data Rate | ~2 kB/s streaming |
+| Battery Life  | ~10 hours active      |
+| BLE Range     | ~10 meters            |
+| Data Rate     | ~2 kB/s streaming     |
 
 ## 📚 Documentation
 
